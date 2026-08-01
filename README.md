@@ -21,4 +21,4 @@ Uni-Biz Hub is a responsive frontend web application designed for university stu
 
 ## Group Members
 - **Sivarajah Sihani ** - ITT/2024/102 / 2787.
-- **P.T.S.Karunanayaka** - Student ID / Index No. (Partner)
+- **P.T.S.Karunanayaka** - ITT/2024/054 / 2739
