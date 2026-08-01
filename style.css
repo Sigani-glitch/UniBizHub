@@ -1,0 +1,132 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Background Simple Frame Container */
+.main-frame {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* Header & Navbar */
+.navbar {
+    background-color: #000000;
+    padding: 15px 0;
+    border-bottom: 2px solid #222222;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    color: #cccccc !important;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* Hero Section */
+.hero-banner {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 40px 20px;
+}
+
+/* Cards & Images */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Product Detail Specific Image */
+.product-detail-img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Buttons */
+.btn-black {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-black:hover {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+.btn-outline-black {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-black:hover, .btn-outline-black.active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Login Card */
+.login-card {
+    max-width: 420px;
+    margin: 40px auto;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    margin-top: auto;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Biz Hub - Product Details</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Uni-Biz Hub</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="category.html">Category</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <div class="main-frame">
+           
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-dark">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-dark">Clothes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Custom Campus Hoodie</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3 align-items-center">
+                
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&q=80" class="product-detail-img" alt="Custom Campus Hoodie">
+                </div>
+
+                <div class="col-md-6 ps-md-4">
+                    <h2 class="fw-bold">Custom Campus Hoodie</h2>
+                    <h3 class="fw-bold my-3 text-dark">LKR 1000.00</h3>
+                    <p class="text-secondary">High-quality fleece hoodie crafted locally by university students. Suitable for all campus seasons.</p>
+
+                   
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Select Quantity</label>
+                        <div class="d-flex align-items-center gap-2" style="max-width: 140px;">
+                            <button class="btn btn-outline-black py-1 px-3" onclick="changeQuantity(-1)">-</button>
+                            <input type="text" id="quantityInput" class="form-control text-center fw-bold" value="1" readonly>
+                            <button class="btn btn-outline-black py-1 px-3" onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-black fw-bold py-2" onclick="messageSeller()">Message Seller</button>
+                        <button class="btn btn-black fw-bold py-2" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="fw-bold">Product Information</h4>
+                    <p class="text-secondary">Made with 100% premium cotton blend. Custom printed upon order by ICT batch students. Delivery is arranged directly on campus accommodation grounds or main canteen pick-up points.</p>
+                </div>
+            </div>
+
+            
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4 class="fw-bold mb-3">Customer Reviews</h4>
+                    <div class="p-3 mb-2 bg-light border rounded">
+                        <p class="mb-1 fw-bold">Sihani.S</p>
+                        <p class="mb-0 text-secondary">Great fabric quality and received it within two days on campus!</p>
+                    </div>
+                    <div class="p-3 bg-light border rounded">
+                        <p class="mb-1 fw-bold">Tharushi.S</p>
+                        <p class="mb-0 text-secondary">Fits perfectly. Really cool to support fellow student business creators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0 small">&copy; 2026 Uni-Biz Hub - ICT Mini Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        let qty = 1;
+        function changeQuantity(change) {
+            qty += change;
+            if (qty < 1) qty = 1;
+            document.getElementById('quantityInput').value = qty;
+        }
+
+        function addToCart() {
+            alert(qty + " Hoodie(s) added to cart!");
+        }
+
+        function messageSeller() {
+            alert("Opening chat with Seller...");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
