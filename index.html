@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Biz Hub - Home</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Uni-Biz Hub</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">My Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-frame">
+            
+            
+            <div class="hero-banner text-center mb-5">
+                <h1 class="fw-bold display-5">Welcome to Uni-Biz Hub</h1>
+                <p class="text-secondary lead">Empowering university student entrepreneurs & campus commerce.</p>
+                
+                
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-7 d-flex gap-2">
+                        <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Search products or services...">
+                        <button class="btn btn-black px-4 fw-bold" onclick="performSearch()">Search</button>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="mb-5">
+                <h3 class="fw-bold mb-4">Featured Products</h3>
+                <div class="row g-4" id="productList">
+                    
+                  
+                    <div class="col-6 col-md-3 product-item" data-category="food">
+                        <div class="card h-100">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80" class="card-img-top" alt="Fresh Bakery Snacks">
+                            <div class="card-body d-flex flex-column text-center">
+                                <h6 class="card-title fw-bold">Homemade Bakery Box</h6>
+                                <p class="fw-bold text-dark mb-3">LKR 500.00</p>
+                                <a href="category.html" class="btn btn-black btn-sm mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                    <div class="col-6 col-md-3 product-item" data-category="art">
+                        <div class="card h-100">
+                            <img src="https://i.pinimg.com/originals/a8/43/5d/a8435d51c2ac19bb4271b642a8b7f506.jpg">
+                            <div class="card-body d-flex flex-column text-center">
+                                <h6 class="card-title fw-bold">Canvas Painting Art</h6>
+                                <p class="fw-bold text-dark mb-3">LKR 1200.00</p>
+                                <a href="category.html" class="btn btn-black btn-sm mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-6 col-md-3 product-item" data-category="electronics">
+                        <div class="card h-100">
+                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80" class="card-img-top" alt="Laptop & Tech Repair Service">
+                            <div class="card-body d-flex flex-column text-center">
+                                <h6 class="card-title fw-bold">Laptop Repair Service</h6>
+                                <p class="fw-bold text-dark mb-3">LKR 4,500.00</p>
+                                <a href="category.html" class="btn btn-black btn-sm mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-6 col-md-3 product-item" data-category="clothes">
+                        <div class="card h-100">
+                            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500&q=80" class="card-img-top" alt="Custom Campus Hoodie">
+                            <div class="card-body d-flex flex-column text-center">
+                                <h6 class="card-title fw-bold">Custom Campus Hoodie</h6>
+                                <p class="fw-bold text-dark mb-3">LKR 1000.00</p>
+                                <a href="category.html" class="btn btn-black btn-sm mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Browse Categories Section -->
+            <div>
+                <h3 class="fw-bold mb-4">Browse Categories</h3>
+                <div class="row text-center g-3">
+                    <div class="col-6 col-md-2">
+                        <button class="btn btn-outline-black w-100 py-3 fw-semibold active" onclick="filterCategory('all')">All Items</button>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <button class="btn btn-outline-black w-100 py-3 fw-semibold" onclick="filterCategory('food')">Food</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <button class="btn btn-outline-black w-100 py-3 fw-semibold" onclick="filterCategory('art')">Art & Crafts</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <button class="btn btn-outline-black w-100 py-3 fw-semibold" onclick="filterCategory('electronics')">Electronics</button>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <button class="btn btn-outline-black w-100 py-3 fw-semibold" onclick="filterCategory('clothes')">Clothes</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+   
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0 small">&copy; 2026 Uni-Biz Hub - ICT Mini Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function filterCategory(category) {
+            const items = document.querySelectorAll('.product-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.product-item');
+            
+            items.forEach(item => {
+                const title = item.querySelector('.card-title').innerText.toLowerCase();
+                if (title.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
