@@ -110,6 +110,56 @@ body {
     padding: 35px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.sell-btn {
+    background-color: #007bff;
+    color: white !important;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
 
 /* Footer */
 footer {
