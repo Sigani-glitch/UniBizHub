@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.html?error=please_login");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +20,15 @@
             <div class="logo">Uni-Biz Hub</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="post-product.html">Sell Item</a></li>
                 <li><a href="login.html">Account</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="form-container">
-        <h2>Post an Item for Sale</h2>
+        <h2>Post an Item for Sale</h2>  
         
-        <!-- enctype="multipart/form-data" is required for image files -->
         <form action="auth/post-product.php" method="POST" enctype="multipart/form-data">
             
             <div class="form-group">
@@ -51,8 +58,8 @@
             </div>
 
             <div class="form-group">
-                <label for="product_image">Product Image</label>
-                <input type="file" id="product_image" name="product_image" accept="image/*" required>
+                <label for="image">Product Image</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
             </div>
 
             <button type="submit" class="submit-btn">Publish Product</button>

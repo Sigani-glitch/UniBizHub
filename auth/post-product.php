@@ -2,39 +2,37 @@
 session_start();
 require_once '../includes/db.php';
 
-// Redirect if user is not logged in
+// Block unauthenticated access
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.html");
+    header("Location: ../login.html?error=please_login");
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $seller_id   = $_SESSION['user_id'];
-    $title       = trim($_POST['title']);
-    $price       = trim($_POST['price']);
-    $category    = trim($_POST['category']);
+$seller_id = $_SESSION['user_id']; // Dynamically pulls logged-in user ID
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $title = trim($_POST['title']);
+    $category = trim($_POST['category']);
+    $price = trim($_POST['price']);
     $description = trim($_POST['description']);
 
-    // Image Upload Handling
-    $image_name   = $_FILES['image']['name'];
-    $image_tmp    = $_FILES['image']['tmp_name'];
-    $target_dir   = "../uploads/";
-    
-    $file_name    = time() . "_" . basename($image_name);
-    $target_file  = $target_dir . $file_name;
-    $db_image_url = "uploads/" . $file_name;
+    // File Upload
+    $image = $_FILES['image'];
+    $image_name = time() . '_' . basename($image['name']);
+    $target_dir = "../uploads/";
+    $target_file = $target_dir . $image_name;
+    $db_image_path = "uploads/" . $image_name;
 
-    if (move_uploaded_file($image_tmp, $target_file)) {
-        $stmt = $conn->prepare("INSERT INTO products (seller_id, title, description, price, category, image_url) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("issdss", $seller_id, $title, $description, $price, $category, $db_image_url);
+    if (move_uploaded_file($image['tmp_name'], $target_file)) {
+        $stmt = $conn->prepare("INSERT INTO products (seller_id, title, category, price, description, image_url) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("issdss", $seller_id, $title, $category, $price, $description, $db_image_path);
 
         if ($stmt->execute()) {
-            header("Location: ../index.html?success=product_posted");
+            header("Location: ../index.php?success=product_posted");
             exit();
         } else {
-            echo "Error saving product to database.";
+            echo "Database error: " . $stmt->error;
         }
-        $stmt->close();
     } else {
         echo "Failed to upload image.";
     }
