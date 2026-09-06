@@ -69,8 +69,12 @@ $result = $stmt->get_result();
                                 <p style="margin: 5px 0 0; color: #2e7d32; font-weight: bold;">$<?php echo number_format($row['price'], 2); ?></p>
                             </div>
                         </div>
-                        <div>
-                            <form action="my-listings.php" method="POST" onsubmit="return confirm('Are you sure you want to delete this listing?');">
+                        
+                        <!-- Actions: Edit & Delete -->
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <a href="edit-product.php?id=<?php echo $row['id']; ?>" style="background: #ffc107; color: #212529; padding: 8px 14px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Edit</a>
+                            
+                            <form action="my-listings.php" method="POST" onsubmit="return confirm('Are you sure you want to delete this listing?');" style="margin: 0;">
                                 <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                                 <button type="submit" style="background: #dc3545; color: white; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer;">Delete</button>
                             </form>
